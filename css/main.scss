@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+$font-barlow: 'Barlow Semi Condensed';
+
+// Primary colors
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+
+// Neutral colors
+$light-gray: hsl(0, 0%, 81%);
+$light-gray-half-opacity: hsla(0, 0%, 81%, 0.5);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+
+/*==========
+DEFAULTS
+=========*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $light-grayish-blue;
+    font-family: $font-barlow, sans-serif;
+    font-size: 13px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*==========
+COMPONENTS
+=========*/
+
+.testimonial {
+    border-radius: 10px;
+    box-shadow: 50px 60px 60px -30px rgba(0,0,0, 0.14);
+    padding: 2em 2.5em 2em;
+    color: $light-gray;
+
+    &__bio {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 1.5em;
+    }
+    &__pic {
+        width: 31px;
+        height: 31px;
+        img {
+            width: 100%;
+            // border: 2px solid transparent;
+            border-radius: 50%;
+        }
+    }
+    &__graduate {
+        display: inline-block;
+    }
+    &__fullname {
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 600;
+    }
+    &__status {
+        display: block;
+        font-family: $font-barlow, sans-serif;
+        font-size: 0.7rem;
+        opacity: 0.5;
+    }
+
+    &__statement {
+        margin: 12px 0 20px;
+        line-height: 1.6rem;
+        font-weight: 600;
+    }
+    &__review {
+        opacity: 0.7;
+        line-height: 1.15rem;
+    }
+
+    &--purple {
+        background: url(../images/bg-pattern-quotation.svg) no-repeat;
+        background-position: top right 21px;
+        background-color: $moderate-violet;
+        .testimonial__pic img {
+            border: 2px solid $light-gray-half-opacity;
+        }
+    }
+    &--gray {
+        background-color: $very-dark-grayish-blue;
+    }
+    &--white {
+        background-color: $white;
+        color: $very-dark-grayish-blue;
+    }
+    &--black {
+        background-color: $very-dark-blackish-blue;
+        .testimonial__pic img {
+            border: 2px solid $moderate-violet;
+        }
+    }
+}
+
+
+
+/*==========
+LAYOUT
+=========*/
+
+main {
+    width: 85%;
+    min-width: 325px;
+    display: grid;
+    row-gap: 1.8em;
+
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+
+
+/*==========
+DESKTOP
+=========*/
+
+@media only screen and (min-width: 750px) {
+    #daniel {
+        grid-area: dan;
+    }
+    #jonathan {
+        grid-area: jon;
+    }
+    #jeanette {
+        grid-area: jean;
+    }
+    #patrick {
+        grid-area: pat;
+    }
+    #kira {
+        grid-area: kira;
+    }
+
+    main {
+        width: 95%;
+        column-gap: 2.3em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "dan dan"
+            "jon jean"
+            "pat pat"
+            "kira kira";
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .testimonial--purple {
+        // Move quotation
+        background-position: top right 6.89em;
+    }
+
+    main {
+        max-width: 1106px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "dan dan jon kira"
+            "jean pat pat kira";
+    }
+}

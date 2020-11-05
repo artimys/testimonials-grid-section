@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+/*==========
+DEFAULTS
+=========*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ecf2f8;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*==========
+COMPONENTS
+=========*/
+.testimonial {
+  border-radius: 10px;
+  -webkit-box-shadow: 50px 60px 60px -30px rgba(0, 0, 0, 0.14);
+          box-shadow: 50px 60px 60px -30px rgba(0, 0, 0, 0.14);
+  padding: 2em 2.5em 2em;
+  color: #cfcfcf;
+}
+
+.testimonial__bio {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5em;
+          column-gap: 1.5em;
+}
+
+.testimonial__pic {
+  width: 31px;
+  height: 31px;
+}
+
+.testimonial__pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.testimonial__graduate {
+  display: inline-block;
+}
+
+.testimonial__fullname {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.testimonial__status {
+  display: block;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.testimonial__statement {
+  margin: 12px 0 20px;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+.testimonial__review {
+  opacity: 0.7;
+  line-height: 1.15rem;
+}
+
+.testimonial--purple {
+  background: url(../images/bg-pattern-quotation.svg) no-repeat;
+  background-position: top right 21px;
+  background-color: #7541c8;
+}
+
+.testimonial--purple .testimonial__pic img {
+  border: 2px solid rgba(207, 207, 207, 0.5);
+}
+
+.testimonial--gray {
+  background-color: #48556a;
+}
+
+.testimonial--white {
+  background-color: white;
+  color: #48556a;
+}
+
+.testimonial--black {
+  background-color: #19212e;
+}
+
+.testimonial--black .testimonial__pic img {
+  border: 2px solid #7541c8;
+}
+
+/*==========
+LAYOUT
+=========*/
+main {
+  width: 85%;
+  min-width: 325px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1.8em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+/*==========
+DESKTOP
+=========*/
+@media only screen and (min-width: 750px) {
+  #daniel {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: dan;
+  }
+  #jonathan {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: jon;
+  }
+  #jeanette {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: jean;
+  }
+  #patrick {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: pat;
+  }
+  #kira {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: kira;
+  }
+  main {
+    width: 95%;
+    -webkit-column-gap: 2.3em;
+            column-gap: 2.3em;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "dan dan" "jon jean" "pat pat" "kira kira";
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .testimonial--purple {
+    background-position: top right 6.89em;
+  }
+  main {
+    max-width: 1106px;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "dan dan jon kira" "jean pat pat kira";
+  }
+}
+/*# sourceMappingURL=main.css.map */
